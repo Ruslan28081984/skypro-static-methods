@@ -22,5 +22,13 @@ public class Main {
             System.out.println(tr + " год не является высокосным");
         }
     }
-    public static void
+
+    public static void adviceDownloaDSistems() {
+     int currentYear = inNumberYear();
+     int ios = 0;
+     int android = 1;
+     if( currentYear<2015){
+         System.out.println();
+     }
+    }
 }
