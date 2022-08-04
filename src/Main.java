@@ -4,31 +4,46 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int year  = inNumberYear();
-        checkYearUp(year);
+        task1();
+        task2();
     }
-    public static int inNumberYear () {
-        System.out.println ("Введи с клавиатуры год, который нуждается в проверке: ");
+
+    static int inNumberYear() {
+        System.out.println("Введи с клавиатуры год : ");
         Scanner in = new Scanner(System.in);
         int num = in.nextInt();
-        return  num;
+        return num;
     }
-    public static void checkYearUp(int tr) {
-        System.out.println("Ты ввел "+ tr);
-        boolean thisYear = (tr % 4 == 0 && tr % 100 != 0 || tr % 400 == 0);
+
+    public static void checkLeapYear(int b) {
+        boolean thisYear = (b % 4 == 0 && b % 100 != 0 || b % 400 == 0);
         if (thisYear) {
-            System.out.println(tr + " год является высокосным ");
+            System.out.println(b + " год является високосным ");
         } else {
-            System.out.println(tr + " год не является высокосным");
+            System.out.println(b + " год не является високосным");
+        }
+    }
+    public static void installVersion(int a, int num) {
+        if (a == 0 && num >= 2015) {
+            System.out.println("Установите версию приложения для IOS по ссылке: ");
+        } else if (a == 0 && num < 2015) {
+            System.out.println("Установите облегчённую версию приложения для IOS по ссылке: ");
+        } else if (a == 1 && num >= 2015) {
+            System.out.println("Установите  версию приложения для Android по ссылке: ");
+        } else if (a == 1 && num < 2015) {
+            System.out.println("Установите облегчённую версию приложения для Android по ссылке: ");
+        } else {
+            System.out.println("Ваша операционная система не поддерживается");
         }
     }
 
-    public static void adviceDownloaDSistems() {
-     int currentYear = inNumberYear();
-     int ios = 0;
-     int android = 1;
-     if( currentYear<2015){
-         System.out.println();
-     }
+
+    public static void task1() {
+        int year = inNumberYear();
+        checkLeapYear(year);
+    }
+    public static void task2() {
+        int clientOs = 1;
+        installVersion(clientOs,inNumberYear());
     }
 }
