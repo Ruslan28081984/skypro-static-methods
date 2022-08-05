@@ -6,10 +6,11 @@ public class Main {
     public static void main(String[] args) {
         task1();
         task2();
+        task3();
     }
 
     static int inNumberYear() {
-        System.out.println("Введи с клавиатуры год : ");
+       // System.out.println("Введи с клавиатуры год : ");
         Scanner in = new Scanner(System.in);
         int num = in.nextInt();
         return num;
@@ -36,14 +37,33 @@ public class Main {
             System.out.println("Ваша операционная система не поддерживается");
         }
     }
+    public static void deliveryTime (int num){
+        if ( num < 20 && num> 0) {
+            System.out.println("потребуется один день доставки");
+        } else if (num >= 20 && num< 60){
+            System.out.println(" Потребуется два дня доставки");
+        } else if (num >= 60 && num< 100){
+            System.out.println(" Потребуется два дня доставки");
+            }else {
+            System.out.println("Доставки нет");
+        }
 
+    }
 
     public static void task1() {
+        System.out.println("Введи год, который нужно узнать високосный он или нет:");
         int year = inNumberYear();
         checkLeapYear(year);
     }
     public static void task2() {
+        System.out.println("Вееди год выпуска своего гаджета:");
         int clientOs = 1;
         installVersion(clientOs,inNumberYear());
+    }
+
+    public static void task3() {
+        System.out.print("Вееди расстояние доставки: ");
+        int distance = inNumberYear();
+        deliveryTime (distance);
     }
 }
